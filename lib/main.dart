@@ -45,7 +45,9 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    Color color = Theme.of(context).primaryColor;
+    Color color = Theme
+        .of(context)
+        .primaryColor;
 
     Widget buttonSection = Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -56,31 +58,45 @@ class MyApp extends StatelessWidget {
       ],
     );
 
-    return MaterialApp(
-      title: 'Flutter layout demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+    Widget textSection = const Padding(
+      padding: EdgeInsets.all(32),
+      child: Text(
+        'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
+            'Alps. Situated 1,578 meters above sea level, it is one of the '
+            'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
+            'half-hour walk through pastures and pine forest, leads you to the '
+            'lake, which warms to 20 degrees Celsius in the summer. Activities '
+            'enjoyed here include rowing, and riding the summer toboggan run.',
+        softWrap: true,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter layout demo'),
+    );
+
+    return MaterialApp(
+        title: 'Flutter layout demo',
+        theme: ThemeData(
+          // This is the theme of your application.
+          //
+          // Try running your application with "flutter run". You'll see the
+          // application has a blue toolbar. Then, without quitting the app, try
+          // changing the primarySwatch below to Colors.green and then invoke
+          // "hot reload" (press "r" in the console where you ran "flutter run",
+          // or simply save your changes to "hot reload" in a Flutter IDE).
+          // Notice that the counter didn't reset back to zero; the application
+          // is not restarted.
+          primarySwatch: Colors.blue,
         ),
-        body: Column(
-          children: [
-            titleSection,
-            buttonSection,
-          ],
-        ),
-      )
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Flutter layout demo'),
+          ),
+          body: Column(
+            children: [
+              titleSection,
+              buttonSection,
+              textSection,
+            ],
+          ),
+        )
     );
   }
 
@@ -177,7 +193,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .headline4,
             ),
           ],
         ),
